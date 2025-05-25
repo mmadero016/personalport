@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM | Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link href="styles.scss" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet"> 
+    <link rel="icon" type="image/png" href="photos/favicon.png">
+</head>
+<body>
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top transparent-navbar py-4">
+    <div class="container position-relative d-flex justify-content-between align-items-center">
+
+      <!-- LEFT: Home -->
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="nav-link text-white d-none d-lg-block">Home</a>
+      </div>
+
+      <!-- CENTER: Logo -->
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <a class="navbar-brand text-white" href="index.html">
+          <img src="photos/mmm.png" alt="Maria Madero Logo" style="height: 50px;">
+        </a>
+      </div>
+
+      <!-- RIGHT: Toggler + Links -->
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <section id="landing" class="d-flex align-items-center justify-content-center text-black text-center">
+        <div>
+            <h1 id="typed-con" class="display-1 text-center"></h1>
+            <p id="typed-cont" class="lead text-center"></p>
+            <div id="scrollArrow" class="custom-scroll-arrow" role="button">↓</div>
+        </div>
+    </section>
+
+        <main id="main-content" class="container content-wrapper scroll-slide-up">
+          <section class="contact-section py-5">
+            <div class="container">
+              <h2 class="fw-bold text-decoration-underline">Contact</h2>
+              <br>
+              <form action="https://formsubmit.co/mamadero@syr.edu" method="POST">
+                <!-- Prevents spam -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirect after submit (optional) -->
+               <input type="hidden" name="_next" value="https://maderomaria.com/thanks.html">
+          
+                <div class="mb-3">
+                  <label for="name">Name:</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+          
+                <div class="mb-3">
+                  <label for="email">Email:</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+          
+                <div class="mb-3">
+                  <label for="message">Description:</label>
+                  <textarea name="message" rows="4" class="form-control" required></textarea>
+                </div>
+          
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+          </section>
+          
+<div class="container text-center my-4 scroll-slide-up">
+    <hr class="w-85 mx-auto">
+  </div>
+  
+<br>
+            <section>
+                <div class="text-center scroll-slide-up">
+                    <p class="lead text-decoration-underline">I will get back to you as soon as possible.</p>
+                    <p>Thank you for your patience!</p>
+                </div>
+            </section>
+<br>
+    </main>
+
+
+    <!-- footer -->  
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+          <svg class="bi" width="30" height="24" aria-hidden="true">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">All Rights Reserved © Maria Madero</span>
+      </div>
+  
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a class="text-body-secondary text-black" href="#" aria-label="Instagram">
+            <svg class="bi" width="24" height="24" aria-hidden="true">
+              <use xlink:href="#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#" aria-label="LinkedIn">
+            <svg class="bi" width="24" height="24" aria-hidden="true">
+              <use xlink:href="#facebook"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+      
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1sgez6pr3x5MLQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  
+  </body>
+  </html>
