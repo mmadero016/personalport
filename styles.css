@@ -113,7 +113,6 @@ body {
 /* Landing section */
 #landing {
   height: 100vh;
-  background: url("photos/your-background.jpg") no-repeat center center;
   background-size: cover;
 }    
 
