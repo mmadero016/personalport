@@ -73,11 +73,35 @@ body {
   color: white;
 }
 
+/* Add animation */
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* Static arrow for closed */
+.skill-btn::before {
+  content: "► ";
+  display: inline-block;
+  margin-right: 8px;
+  animation: bounceArrow 1s infinite;
+  transition: transform 0.2s;
+}
+
+/* Down arrow for open */
 .skill-btn.open::before {
   content: "▼ ";
+  transform: rotate(0deg);
+  animation: none; /* Stop bouncing when open */
 }
-.skill-btn::before {
-  content: "▶ ";
+
+/* Optional: hover to emphasize */
+.skill-btn:hover::before {
+  transform: translateX(3px);
 }
 
 .glow-white {
