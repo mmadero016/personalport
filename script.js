@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const nameAb = "About Me";
-const titleAb = "What I do, and what I'm passionate about.";
+const titleAb = "and what I am passionate about.";
 
 const titleAbout1 = document.getElementById("typed-ab");
 const titleAbout2 = document.getElementById("typed-abt");
