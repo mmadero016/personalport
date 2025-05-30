@@ -151,37 +151,6 @@ body {
 
 
 
-.carousel {
-  position: relative;
-  padding: 0 2rem; /* Adds space on left & right so arrows don't get squished */
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%; /* Keeps them closer to the image */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #8B3A3A; /* whatever custom color you want */
-  border-radius: 50%;
-  padding: 10px;
-}
-
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%; /* Keeps them closer to the image */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #8B3A3A; /* whatever custom color you want */
-  border-radius: 50%;
-  padding: 10px;
-}
-
-
 /* arrow on screen */
 .custom-scroll-arrow {
   position: fixed;
@@ -334,11 +303,3 @@ body {
   margin-bottom: 20px;
 }
 
-.carousel-container {
-  padding: 10px 0;
-}
-
-.carousel-item img {
-  max-height: 400px;
-  object-fit: contain;
-}
