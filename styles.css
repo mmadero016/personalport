@@ -1,27 +1,6 @@
 @import "/node_modules/bootstrap/dist/css/bootstrap-grid.css";
 @import "/node_modules/bootstrap/dist/css/bootstrap.css";/*# sourceMappingURL=styles.css.map */
  
-.bg-beige {
-  background-color: #f7f1e1;
-}
-
-.bg-grey {
-  background-color: #3f3f3f;
-}
-
-.bg-dark-green {
-  background-color: #f30b0b;
-}
-
-.about-text {
-  background-color: #b2c3a0;
-  border-radius: 8px;
-}
-
-
-
-
-/* Skills grid boxes */
 .skill-box {
   height: 100px;
   background-color: #d6cdb2;
@@ -40,7 +19,6 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
-
 
 #myname {
   font-family: "Vidaloka", serif;
@@ -73,7 +51,7 @@ body {
   color: white;
 }
 
-/* Add animation */
+
 @keyframes bounceArrow {
   0%, 100% {
     transform: translateX(0);
@@ -83,7 +61,7 @@ body {
   }
 }
 
-/* Static arrow for closed */
+
 .skill-btn::before {
   content: "► ";
   display: inline-block;
@@ -92,14 +70,12 @@ body {
   transition: transform 0.2s;
 }
 
-/* Down arrow for open */
 .skill-btn.open::before {
   content: "▼ ";
   transform: rotate(0deg);
-  animation: none; /* Stop bouncing when open */
+  animation: none; 
 }
 
-/* Optional: hover to emphasize */
 .skill-btn:hover::before {
   transform: translateX(3px);
 }
@@ -117,30 +93,23 @@ body {
   border-color: white;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Transparent navbar */
 .transparent-navbar {
-  background-color: rgba(0, 0, 0, 0); /* true transparent */
+  background-color: rgba(0, 0, 0, 0);
   backdrop-filter: none;
   transition: background-color 0.4s ease;
 }
 
 .solid-navbar {
-  background-color: rgba(0, 0, 0, 0.85); /* solid black with a bit of transparency */
+  background-color: rgba(0, 0, 0, 0.85); 
   backdrop-filter: blur(4px);
   transition: background-color 0.4s ease;
 }
 
-/* Landing section */
 #landing {
   height: 100vh;
   background-size: cover;
 }    
 
-/* Optional: animated arrow */
 .scroll-down-arrow {
   animation: bounce 1.5s infinite;
 }
@@ -150,8 +119,6 @@ body {
 }
 
 
-
-/* arrow on screen */
 .custom-scroll-arrow {
   position: fixed;
   bottom: 40px;
@@ -168,11 +135,6 @@ body {
 .custom-scroll-arrow.hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-
-body {
-  cursor: url('photos/mouse.png'), auto;
 }
 
 .nav-link {
@@ -219,7 +181,6 @@ body {
   transform: translateY(0);
 }
 
-
 .project-card {
   position: relative;
   overflow: hidden;
@@ -238,7 +199,7 @@ body {
 .overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* dark transparent overlay */
+  background: rgba(0, 0, 0, 0.6); 
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -302,4 +263,5 @@ body {
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 
