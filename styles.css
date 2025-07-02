@@ -264,4 +264,9 @@ body {
   margin-bottom: 20px;
 }
 
+.doodle-img {
+  max-width: 350px;
+  margin-top: 1rem;
+}
+
 
