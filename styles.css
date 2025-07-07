@@ -270,3 +270,7 @@ body {
 }
 
 
+.polaroid-scribble {
+  max-width: 500px;
+  height: auto;
+} 
