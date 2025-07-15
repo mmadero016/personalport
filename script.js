@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const nameGal = "Gallery";
-const titleGal = "My previous projects displayed at your convenience.";
+const titleGal = "My work displayed";
 
 const titleElGal = document.getElementById("typed-gal");
 const titleElGal2 = document.getElementById("typed-second");
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const nameAb = "About Me";
-const titleAb = "and what I am passionate about.";
+const titleAb = "and my passions";
 
 const titleAbout1 = document.getElementById("typed-ab");
 const titleAbout2 = document.getElementById("typed-abt");
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const nameCon = "Contact";
-const titleCon = "Let's stay in touch.";
+const titleCon = "Stay in touch";
 
 const titleCon1 = document.getElementById("typed-con");
 const titleCon2 = document.getElementById("typed-cont");
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const nameThank = "Thank you!";
-const titleThank = "Return to site using button below.";
+const titleThank = "Return to site using button above.";
 
 const titleTy1 = document.getElementById("typed-thank");
 const titleTy2 = document.getElementById("typed-thanks");
