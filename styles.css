@@ -42,6 +42,12 @@ body {
   }
 }
 
+.skill-desc {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding-left: 3.2rem;
+}
+
 .skill-static {
   font-size: 1.5rem;
   font-weight: 700;
@@ -49,6 +55,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 .glow-white {
@@ -84,6 +91,7 @@ body {
 .scroll-down-arrow {
   animation: bounce 1.5s infinite;
 }
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
@@ -101,7 +109,7 @@ body {
   opacity: 1;
   transition: opacity 0.4s ease;
   animation: bounce 1.5s infinite;
-}ujnn
+}
 
 .custom-scroll-arrow.hidden {
   opacity: 0;
