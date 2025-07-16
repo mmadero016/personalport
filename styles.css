@@ -1,11 +1,5 @@
 @import "/node_modules/bootstrap/dist/css/bootstrap-grid.css";
 @import "/node_modules/bootstrap/dist/css/bootstrap.css";/*# sourceMappingURL=styles.css.map */
- 
-.skill-box {
-  height: 100px;
-  background-color: #d6cdb2;
-  border-radius: 4px;
-}
 
 .btn-success {
   background-color: #ab0b0b;
@@ -20,19 +14,6 @@ body {
   font-style: normal;
 }
 
-#myname {
-  font-family: "Vidaloka", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-#testy {
-  display: none;
-  margin-left: 1.5rem;
-  font-size: 1rem;
-}
-
 @keyframes bounceArrow {
   0%, 100% {
     transform: translateX(0);
@@ -43,7 +24,7 @@ body {
 }
 
 .skill-desc {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
   padding-left: 3.0rem;
 }
@@ -65,7 +46,6 @@ body {
     0 0 20px white;
   transition: box-shadow 0.3s ease-in-out;
 }
-
 
 .navbar-toggler {
   border-color: white;
@@ -95,7 +75,7 @@ body {
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
-}
+} /* for arrow on landing page */
 
 
 .custom-scroll-arrow {
