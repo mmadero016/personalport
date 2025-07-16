@@ -100,7 +100,7 @@ body {
 
 .custom-scroll-arrow {
   position: fixed;
-  bottom: 40px;
+  bottom: 190px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;

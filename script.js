@@ -22,8 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/*
+
 const nameGal = "Gallery";
-const titleGal = "My work displayed";
+const titleGal = "My wo.";
 
 const titleElGal = document.getElementById("typed-gal");
 const titleElGal2 = document.getElementById("typed-second");
@@ -47,9 +49,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+*/
+
+
+
+
+
+const nameGal = "Gallery";
+
+const titleElGal = document.getElementById("typed-gal");
+
+function typeWriter(text, element, index, callback) {
+  if (index === 0) element.textContent = ""; // Clear previous
+  if (index < text.length) {
+    element.textContent += text.charAt(index);
+    setTimeout(() => {
+      typeWriter(text, element, index + 1, callback);
+    }, 100);
+  } else if (callback) {
+    setTimeout(callback, 300);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (titleElGal) {
+    typeWriter(nameGal, titleElGal, 0, () => {
+    });
+  }
+});
 
 const nameAb = "About Me";
-const titleAb = "and my passions";
+const titleAb = "My journey, skills, and passions.";
 
 const titleAbout1 = document.getElementById("typed-ab");
 const titleAbout2 = document.getElementById("typed-abt");
@@ -77,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const nameCon = "Contact";
-const titleCon = "Stay in touch";
+const titleCon = "Stay in touch.";
 
 const titleCon1 = document.getElementById("typed-con");
 const titleCon2 = document.getElementById("typed-cont");
@@ -104,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const nameThank = "Thank you!";
-const titleThank = "Return to site using button above.";
+const titleThank = "Return to site using button below.";
 
 const titleTy1 = document.getElementById("typed-thank");
 const titleTy2 = document.getElementById("typed-thanks");
