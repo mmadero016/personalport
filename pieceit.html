@@ -19,7 +19,7 @@
         <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-4">
           <div class="container position-relative d-flex justify-content-between align-items-center">
       
-            <!-- home thingY -->
+            <!-- home thing -->
             <div class="d-flex align-items-center">
               <a href="index.html" class="nav-link text-white d-none d-lg-block">Home</a>
             </div>
@@ -48,34 +48,79 @@
         </nav>
     
   </nav>
-    <main id="main-content" class="container content-wrapper scroll-slide-up">
-            <h2 class="fw-bold text-decoration-underline">PieceIT</h2>
-            <br>
-            <form action="https://formsubmit.co/mamadero@syr.edu" method="POST">
-              <!-- prevents spam -->
-              <input type="hidden" name="_captcha" value="false">
-              <!-- redirect after submitting -->
-             <input type="hidden" name="_next" value="https://maderomaria.com/thanks.html">
-        
-              <div class="mb-3">
-                <label for="name">Name:</label>
-                <input type="text" name="name" class="form-control" required>
-              </div>
-        
-              <div class="mb-3">
-                <label for="email">Email:</label>
-                <input type="email" name="email" class="form-control" required>
-              </div>
-        
-              <div class="mb-3">
-                <label for="message">Description:</label>
-                <textarea name="message" rows="4" class="form-control" required></textarea>
-              </div>
-        
-              <button type="submit" class="btn btn-success">Submit</button>
-            </form>
+  <main class="container px-4 px-lg-5" style="padding-top:150px;">
+    <h2 class="fw-bold mb-4 text-decoration-underline">PieceIT</h2>
+    <!-- PieceIT: text + carousel -->
+<div class="row align-items-center g-5">
+    <!-- text -->
+    <div class="col-12 col-lg-6">
+      <p class="lead">
+        PieceIT is a UI/UX concept that lets users compose their ideal living room from modular pieces.
+      </p>
+      <p class="mb-4">
+        Built with a friendly, modern aesthetic and streamlined mobile flows.
+      </p>
+      <a href="gallery.html" class="btn btn-outline-dark btn-sm">Back to Gallery</a>
+    </div>
+  
+    <!-- carousel -->
+    <div class="col-12 col-lg-6 d-flex justify-content-lg-end">
+      <div id="pieceitCarousel" class="carousel slide rounded shadow overflow-hidden"
+           style="max-width:460px;" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="photos/pieceit/iconmockup.png" class="d-block w-100" alt="PieceIT — home screen">
           </div>
-        </section>
+          <div class="carousel-item">
+            <img src="photos/pieceit/benchmockup.png" class="d-block w-100" alt="PieceIT — room builder">
+          </div>
+          <div class="carousel-item">
+            <img src="photos/pieceit/widepalette.png" class="d-block w-100" alt="PieceIT — palette selection">
+          </div>
+        </div>
+  
+        <!-- controls (optional) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#pieceitCarousel" data-bs-slide="prev" aria-label="Previous">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#pieceitCarousel" data-bs-slide="next" aria-label="Next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+  
+        <!-- indicators (optional) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#pieceitCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#pieceitCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#pieceitCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </main>
+  
+  
+  
+  
 
-    </body>
-</main>
+
+
+<!-- footer -->  
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+          <svg class="bi" width="30" height="24" aria-hidden="true">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Maria Madero All Rights Reserved</span>
+      </div>
+    </footer>
+  </div>
+      
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1sgez6pr3x5MLQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  
+  </body>
+  </html>
