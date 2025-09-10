@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/*
+
 
 const nameGal = "Gallery";
-const titleGal = "My wo.";
+const titleGal = "My work below.";
 
 const titleElGal = document.getElementById("typed-gal");
 const titleElGal2 = document.getElementById("typed-second");
@@ -49,34 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-*/
 
-
-
-
-
-const nameGal = "Gallery";
-
-const titleElGal = document.getElementById("typed-gal");
-
-function typeWriter(text, element, index, callback) {
-  if (index === 0) element.textContent = ""; // Clear previous
-  if (index < text.length) {
-    element.textContent += text.charAt(index);
-    setTimeout(() => {
-      typeWriter(text, element, index + 1, callback);
-    }, 100);
-  } else if (callback) {
-    setTimeout(callback, 300);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (titleElGal) {
-    typeWriter(nameGal, titleElGal, 0, () => {
-    });
-  }
-});
 
 const nameAb = "About Me";
 const titleAb = "My journey, skills, and passions.";
@@ -103,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 
 
 const nameCon = "Contact";
@@ -181,7 +153,6 @@ function updateNavbarStyle() {
     window.location.pathname.includes("index.html") ||
     window.location.pathname.includes("gallery.html") ||
     window.location.pathname.includes("about.html") ||
-    window.location.pathname.includes("contact.html") ||
     window.location.pathname.includes("contact.html") ||
     window.location.pathname === "/";
 
