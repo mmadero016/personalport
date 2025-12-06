@@ -329,26 +329,32 @@ body {
   }
 }
 
+/* ===================== */
+/* CUSTOM CURSOR + TEXT  */
+/* ===================== */
+
 .custom-cursor {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgba(0, 108, 154, 0.599);
+  background-color: rgba(0, 108, 154, 0.6); /* your color */
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%); /* center circle on pointer */
+  pointer-events: none;                /* so it doesn't block clicks */
+  transform: translate(-50%, -50%);    /* center circle on pointer */
   z-index: 9999;
 }
 
+/* Color applied to whatever text is currently "under" the cursor */
 .text-highlight {
-  color: #006c87; /* or whatever color you want */
+  color: #006c87;                      /* pick any color you like */
   transition: color 0.15s ease;
 }
 
+/* Disable custom cursor on touch / mobile devices */
 @media (hover: none), (pointer: coarse) {
   .custom-cursor {
-      display: none !important;
+    display: none !important;
   }
 }

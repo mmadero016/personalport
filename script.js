@@ -285,26 +285,40 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateHorizontalScroll);
 });
 
+
+
+// =======================
+// Custom cursor + text highlight
+// =======================
 document.addEventListener("DOMContentLoaded", () => {
+  // Skip everything on touch / mobile devices
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  if (isTouchDevice) return;
+
   const cursor = document.querySelector(".custom-cursor");
+  if (!cursor) return;
+
   let lastHighlighted = null;
 
   document.addEventListener("mousemove", (e) => {
-    // move cursor
+    // Move the cursor dot
     cursor.style.top = `${e.clientY}px`;
     cursor.style.left = `${e.clientX}px`;
 
-    // detect element under cursor
+    // Find the element directly under the cursor
     const elem = document.elementFromPoint(e.clientX, e.clientY);
 
-    // clear previous highlight
+    // Remove highlight from previous element
     if (lastHighlighted && lastHighlighted !== elem) {
       lastHighlighted.classList.remove("text-highlight");
       lastHighlighted = null;
     }
 
-    // apply highlight if hovering text elements
-    if (elem && elem.matches("p, a, h1, h2, h3, span, li")) {
+    // Only highlight actual text elements (you can tweak this selector)
+    if (
+      elem &&
+      elem.matches("p, a, h1, h2, h3, h4, h5, li, span")
+    ) {
       elem.classList.add("text-highlight");
       lastHighlighted = elem;
     }
