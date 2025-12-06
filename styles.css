@@ -346,3 +346,9 @@ body {
   color: #006c87; /* or whatever color you want */
   transition: color 0.15s ease;
 }
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+      display: none !important;
+  }
+}
