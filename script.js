@@ -1,25 +1,49 @@
 const nameText = "Maria Madero";
-const titleText = "Creator · Developer · Designer";
+const titleText = "Creator · Designer";
 
 const nameEl = document.getElementById("typed-name");
 const titleEl = document.getElementById("typed-title");
 
-
 function typeWriter(text, element, index, callback) {
-  if (index === 0) element.textContent = ''; // clear previous content
+  if (index === 0) element.textContent = "";
   if (index < text.length) {
     element.textContent += text.charAt(index);
     setTimeout(() => {
       typeWriter(text, element, index + 1, callback);
-    }, 100);
+    }, 60);
   } else if (callback) {
     setTimeout(callback, 300);
   }
 }
+
+function deleteWriter(text, element, index, callback) {
+  if (index >= 0) {
+    element.textContent = text.substring(0, index);
+    setTimeout(() => {
+      deleteWriter(text, element, index - 1, callback);
+    }, 40);
+  } else if (callback) {
+    callback();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  typeWriter(nameText, nameEl, 0, () => {
+  typeWriter(nameText, nameEl, 0,() => {
     typeWriter(titleText, titleEl, 0);
   });
+});
+
+// Scroll trigger to delete text
+let hasDeleted = false;
+
+window.addEventListener("scroll", () => {
+  if (!hasDeleted && window.scrollY > 30) {
+    hasDeleted = true;
+
+    deleteWriter(nameText, nameEl, nameText.length, () => {
+      deleteWriter(titleText, titleEl, titleText.length);
+    });
+  }
 });
 
 
@@ -36,7 +60,7 @@ function typeWriter(text, element, index, callback) {
     element.textContent += text.charAt(index);
     setTimeout(() => {
       typeWriter(text, element, index + 1, callback);
-    }, 100);
+    }, 60);
   } else if (callback) {
     setTimeout(callback, 300);
   }
@@ -63,7 +87,7 @@ function typeWriter(text, element, index, callback) {
     element.textContent += text.charAt(index);
     setTimeout(() => {
       typeWriter(text, element, index + 1, callback);
-    }, 100);
+    }, 60);
   } else if (callback) {
     setTimeout(callback, 300);
   }
@@ -90,7 +114,7 @@ function typeWriter(text, element, index, callback) {
     element.textContent += text.charAt(index);
     setTimeout(() => {
       typeWriter(text, element, index + 1, callback);
-    }, 100);
+    }, 60);
   } else if (callback) {
     setTimeout(callback, 300);
   }
@@ -117,7 +141,7 @@ function typeWriter(text, element, index, callback) {
     element.textContent += text.charAt(index);
     setTimeout(() => {
       typeWriter(text, element, index + 1, callback);
-    }, 100);
+    }, 60);
   } else if (callback) {
     setTimeout(callback, 300);
   }
@@ -233,3 +257,56 @@ window.addEventListener('scroll', handleScrollAnimation);
 handleScrollAnimation();
 
 
+// ========= HORIZONTAL SCROLL GALLERY =========
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.getElementById("scroll-gallery");
+  const track = document.querySelector(".scroll-gallery-track");
+  if (!section || !track) return;
+
+  function updateHorizontalScroll() {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // progress through the section: 0 at start, 1 at end
+    const progress = Math.min(
+      Math.max((windowHeight - rect.top) / (rect.height + windowHeight), 0),
+      1
+    );
+
+    // how far to slide the track to the left (in %)
+    const maxShift = 60; // increase if you want it to move more
+    const translateX = -progress * maxShift;
+
+    track.style.transform = `translateX(${translateX}%)`;
+  }
+
+  updateHorizontalScroll();
+  window.addEventListener("scroll", updateHorizontalScroll);
+  window.addEventListener("resize", updateHorizontalScroll);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cursor = document.querySelector(".custom-cursor");
+  let lastHighlighted = null;
+
+  document.addEventListener("mousemove", (e) => {
+    // move cursor
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+
+    // detect element under cursor
+    const elem = document.elementFromPoint(e.clientX, e.clientY);
+
+    // clear previous highlight
+    if (lastHighlighted && lastHighlighted !== elem) {
+      lastHighlighted.classList.remove("text-highlight");
+      lastHighlighted = null;
+    }
+
+    // apply highlight if hovering text elements
+    if (elem && elem.matches("p, a, h1, h2, h3, span, li")) {
+      elem.classList.add("text-highlight");
+      lastHighlighted = elem;
+    }
+  });
+});

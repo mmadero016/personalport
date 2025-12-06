@@ -261,3 +261,88 @@ body {
   transform: translateX(2px);
 }
 
+/* ========= HORIZONTAL SCROLL GALLERY ========= */
+
+.scroll-gallery {
+  position: relative;
+  height: 100vh;              /* how tall the scroll experience is */
+  overflow: hidden;
+
+  /* full-bleed: break out of any parent container */
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-gallery-inner {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;  /* stick to the top instead of middle */
+  justify-content: flex-start;
+  padding-top: 80px;        /* push cards down a bit under the navbar */
+  overflow: hidden;
+}
+
+
+/* horizontal row of cards */
+.scroll-gallery-track {
+  display: flex;
+  gap: 40px;
+  padding: 0 180px;           /* small inset from edges; tweak or remove */
+  will-change: transform;
+}
+
+/* individual project cards */
+.scroll-card {
+  aspect-ratio: 3 / 4;
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
+.scroll-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* optional: make it behave a bit nicer on small screens */
+@media (max-width: 768px) {
+  .scroll-gallery {
+    height: 120vh;
+  }
+
+  .scroll-card {
+    width: 320px;
+    height: 220px;
+  }
+
+  .scroll-gallery-track {
+    gap: 24px;
+    padding: 0 24px;
+  }
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 108, 154, 0.599);
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* center circle on pointer */
+  z-index: 9999;
+}
+
+.text-highlight {
+  color: #006c87; /* or whatever color you want */
+  transition: color 0.15s ease;
+}
