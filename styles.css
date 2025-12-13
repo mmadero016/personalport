@@ -265,10 +265,10 @@ body {
 
 .scroll-gallery {
   position: relative;
-  height: 100vh;              /* how tall the scroll experience is */
+  height: 80vh;              /* was 100vh – less tall = less white space */
   overflow: hidden;
 
-  /* full-bleed: break out of any parent container */
+  /* full-bleed: break out of Bootstrap container */
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -277,21 +277,19 @@ body {
 .scroll-gallery-inner {
   position: sticky;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  height: 80vh;              /* match the section height */
   display: flex;
-  align-items: flex-start;  /* stick to the top instead of middle */
+  align-items: center;       /* vertically center the cards */
   justify-content: flex-start;
-  padding-top: 80px;        /* push cards down a bit under the navbar */
+  padding-top: 40px;         /* was 80px – shrinks top gap */
   overflow: hidden;
 }
-
 
 /* horizontal row of cards */
 .scroll-gallery-track {
   display: flex;
   gap: 40px;
-  padding: 0 180px;           /* small inset from edges; tweak or remove */
+  padding: 0 120px;          /* small inset from edges; tweak if you like */
   will-change: transform;
 }
 
@@ -302,7 +300,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
 }
 
@@ -312,14 +310,22 @@ body {
   object-fit: cover;
 }
 
+/* "More Here" spacing */
+.index-more {
+  padding-inline: 36px;
+  padding-block: 10px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
 /* optional: make it behave a bit nicer on small screens */
 @media (max-width: 768px) {
   .scroll-gallery {
-    height: 120vh;
+    height: 120vh;           /* more scroll room on mobile if you want */
   }
 
   .scroll-card {
-    width: 320px;
+    width: 280px;
     height: 220px;
   }
 
@@ -328,6 +334,7 @@ body {
     padding: 0 24px;
   }
 }
+
 
 /* ===================== */
 /* CUSTOM CURSOR + TEXT  */
