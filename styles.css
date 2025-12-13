@@ -318,22 +318,7 @@ body {
   font-weight: 500;
 }
 
-/* optional: make it behave a bit nicer on small screens */
-@media (max-width: 768px) {
-  .scroll-gallery {
-    height: 120vh;           /* more scroll room on mobile if you want */
-  }
 
-  .scroll-card {
-    width: 280px;
-    height: 220px;
-  }
-
-  .scroll-gallery-track {
-    gap: 24px;
-    padding: 0 24px;
-  }
-}
 
 
 /* ===================== */
