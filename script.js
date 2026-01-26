@@ -1,5 +1,5 @@
 const nameText = "Maria Madero";
-const titleText = "Creator · Designer";
+const titleText = "Innovating through design.";
 
 const nameEl = document.getElementById("typed-name");
 const titleEl = document.getElementById("typed-title");
