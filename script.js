@@ -33,18 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Scroll trigger to delete text
-let hasDeleted = false;
-
-window.addEventListener("scroll", () => {
-  if (!hasDeleted && window.scrollY > 30) {
-    hasDeleted = true;
-
-    deleteWriter(nameText, nameEl, nameText.length, () => {
-      deleteWriter(titleText, titleEl, titleText.length);
-    });
-  }
-});
 
 
 
