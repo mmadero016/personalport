@@ -7,6 +7,91 @@ body {
   font-style: normal;
 }
 
+#landing > div {
+  width: 100%;
+  max-width: 1100px;            /* prevents super-wide lines on desktop */
+  margin: 0 auto;
+}
+
+#name-intro {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: clamp(102px, 10vw, 170px); /* key line */
+  line-height: 1;
+  margin: 0;                    /* kill default h1 spacing */
+  overflow-wrap: anywhere;      /* prevents overflow */
+}
+
+/* tagline */
+.intro-blurb {
+  font-size: clamp(20px, 2.4vw, 29px);
+  line-height: 1.25;
+  margin: 8px auto 0;
+  max-width: 42ch;              /* keeps it looking like your Figma */
+}
+
+/* italics part */
+.intro-blurb .emph {
+  font-style: italic;
+}
+
+/* red “design.” */
+.intro-blurb .accent {
+  font-style: italic;
+  color: #91D84A;
+  text-decoration: underline;
+}
+
+#landing {
+  background-color: #1e1e1e;
+  height: 85vh;         /* <-- controls the cutoff */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+.landing-line {
+  position: absolute;
+  height: 1px;
+  background: rgba(255,255,255,0.55);
+}
+
+
+/* left line */
+.landing-line-left {
+  left: 0;
+  right: 55%;   /* controls how far it extends */
+  top: 140px;   /* adjust vertically */
+}
+
+
+/* right line */
+.landing-line-right {
+  right: 0;
+  left: 55%;    /* controls how far it extends */
+  top: 460px;   /* adjust vertically */
+}
+
+
+@media (max-width: 768px){
+  .landing-line{ display: none; }
+}
+
+
+
+
+
+
+body {
+  background: #fff;
+}
+#main-content {
+  background: #fff;
+}
+
+
 @keyframes bounceArrow {
   0%, 100% {
     transform: translateX(0);
@@ -51,15 +136,12 @@ body {
 }
 
 .solid-navbar {
-  background-color: rgba(0, 0, 0, 0.85); 
-  backdrop-filter: blur(4px);
+  background-color: rgb(30, 30, 30, 0.6); 
+  backdrop-filter: blur(6px);
   transition: background-color 0.4s ease;
 }
 
-#landing {
-  height: 100vh;
-  background-size: cover;
-}    
+
 
 .scroll-down-arrow {
   animation: bounce 1.5s infinite;
@@ -77,7 +159,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;
-  color: #000000;
+  color: #ffffff;
   z-index: 999;
   opacity: 1;
   transition: opacity 0.4s ease;
@@ -329,24 +411,115 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgba(0, 108, 154, 0.6); /* your color */
+  background-color:  rgba(102, 198, 117, 0.6); 
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;                /* so it doesn't block clicks */
-  transform: translate(-50%, -50%);    /* center circle on pointer */
+  pointer-events: none;               
+  transform: translate(-50%, -50%);    
   z-index: 9999;
-}
+} 
 
-/* Color applied to whatever text is currently "under" the cursor */
+/*
 .text-highlight {
-  color: #006c87;                      /* pick any color you like */
+  color: #d84a4a;                    
   transition: color 0.15s ease;
-}
+} /
 
-/* Disable custom cursor on touch / mobile devices */
+ /* Disable custom cursor on touch / mobile devices */
 @media (hover: none), (pointer: coarse) {
   .custom-cursor {
     display: none !important;
   }
+} 
+
+.word {
+  display: inline-block;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.site-footer {
+  width: 100%;
+  background-color: #1e1e1e;   /* your dark bg */
+  padding: 80px 0 40px 0;
+  color: white;
+}
+
+.footer-inner {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+
+.footer-left {
+  flex: 1;
+}
+
+.stay-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RIGHT SIDE */
+
+.footer-right {
+  flex: 1;
+}
+
+.footer-field {
+  margin-bottom: 20px;
+}
+
+.footer-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.footer-field input,
+.footer-field textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+.footer-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #6cc28a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+}
+
+/* BOTTOM LINE + COPYRIGHT */
+
+.footer-bottom {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  opacity: 0.8;
 }

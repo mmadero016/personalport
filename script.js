@@ -1,5 +1,5 @@
 const nameText = "Maria Madero";
-const titleText = "Innovating through design.";
+const titleText = "Blending creativity and passion through design.";
 
 const nameEl = document.getElementById("typed-name");
 const titleEl = document.getElementById("typed-title");
@@ -70,7 +70,7 @@ const titleAbout1 = document.getElementById("typed-ab");
 const titleAbout2 = document.getElementById("typed-abt");
 
 function typeWriter(text, element, index, callback) {
-  if (index === 0) element.textContent = ""; // Clear previous
+  if (index === 0) element.textContent = ""; 
   if (index < text.length) {
     element.textContent += text.charAt(index);
     setTimeout(() => {
@@ -168,16 +168,11 @@ function updateNavbarStyle() {
     window.location.pathname.includes("contact.html") ||
     window.location.pathname === "/";
 
-  if (window.scrollY > 50) {
-    nav.classList.remove('transparent-navbar');
-    nav.classList.add('solid-navbar');
-  } else if (isHomePage) {
-    nav.classList.add('transparent-navbar');
-    nav.classList.remove('solid-navbar');
-  } else {
-    nav.classList.remove('transparent-navbar');
-    nav.classList.add('solid-navbar');
-  }
+  function updateNavbarStyle() {
+  if (!nav) return;
+  nav.classList.remove('transparent-navbar');
+  nav.classList.add('solid-navbar');
+}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -278,37 +273,99 @@ document.addEventListener("DOMContentLoaded", () => {
 // =======================
 // Custom cursor + text highlight
 // =======================
+
+
+// Wrap each word inside selected elements with <span class="word">
+function wrapWords(selector) {
+  document.querySelectorAll(selector).forEach((el) => {
+    // Skip if already wrapped (prevents double-wrapping on refresh / live server)
+    if (el.querySelector(".word")) return;
+
+    // Only wrap direct text content (keeps your existing spans like .emph/.accent intact)
+    // We'll rebuild the element by walking its childNodes.
+    const nodes = Array.from(el.childNodes);
+    el.innerHTML = "";
+
+    nodes.forEach((node) => {
+      // If it's a text node, split into words + spaces
+      if (node.nodeType === Node.TEXT_NODE) {
+        const parts = node.textContent.split(/(\s+)/); // keeps spaces
+        parts.forEach((part) => {
+          if (part.trim() === "") {
+            el.appendChild(document.createTextNode(part));
+          } else {
+            const span = document.createElement("span");
+            span.className = "word";
+            span.textContent = part;
+            el.appendChild(span);
+          }
+        });
+      } else {
+        // If it's an element (like your <span class="emph">), keep it
+        el.appendChild(node);
+
+        // Also wrap words inside those nested spans if you want
+        // (optional: only do this if you want emph/accent to highlight per word too)
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          // Wrap only the text inside nested spans, without destroying their class
+          const innerNodes = Array.from(node.childNodes);
+          if (!node.querySelector(".word")) {
+            node.innerHTML = "";
+            innerNodes.forEach((inner) => {
+              if (inner.nodeType === Node.TEXT_NODE) {
+                const innerParts = inner.textContent.split(/(\s+)/);
+                innerParts.forEach((p) => {
+                  if (p.trim() === "") {
+                    node.appendChild(document.createTextNode(p));
+                  } else {
+                    const w = document.createElement("span");
+                    w.className = "word";
+                    w.textContent = p;
+                    node.appendChild(w);
+                  }
+                });
+              } else {
+                node.appendChild(inner);
+              }
+            });
+          }
+        }
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Skip everything on touch / mobile devices
   const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
   if (isTouchDevice) return;
+
+  // 1) Wrap words where you want this effect
+  wrapWords("#name-intro, .intro-blurb"); // add more selectors if needed
 
   const cursor = document.querySelector(".custom-cursor");
   if (!cursor) return;
 
+  // IMPORTANT: Make sure cursor doesn't block elementFromPoint
+  cursor.style.pointerEvents = "none";
+
   let lastHighlighted = null;
 
   document.addEventListener("mousemove", (e) => {
-    // Move the cursor dot
     cursor.style.top = `${e.clientY}px`;
     cursor.style.left = `${e.clientX}px`;
 
-    // Find the element directly under the cursor
     const elem = document.elementFromPoint(e.clientX, e.clientY);
 
-    // Remove highlight from previous element
     if (lastHighlighted && lastHighlighted !== elem) {
       lastHighlighted.classList.remove("text-highlight");
       lastHighlighted = null;
     }
 
-    // Only highlight actual text elements (you can tweak this selector)
-    if (
-      elem &&
-      elem.matches("p, a, h1, h2, h3, h4, h5, li, span")
-    ) {
+    // Only highlight individual words
+    if (elem && elem.classList && elem.classList.contains("word")) {
       elem.classList.add("text-highlight");
       lastHighlighted = elem;
     }
   });
 });
+
